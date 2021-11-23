@@ -17,7 +17,7 @@ for file_name in toConvert:
     print("Exporting " + dest_file)
     if " - " in file_name:
         songData = file_name.split(" - ")
-        trackname = songData[1]
+        trackname = songData[1].replace(".wav", "")
         artist = songData[0]
         song.export(dest_file, format="mp3", bitrate="320k", tags={"artist": artist, "title": trackname})
 
